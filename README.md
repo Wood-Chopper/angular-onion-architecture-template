@@ -1,6 +1,18 @@
 # Angular Onion Architecture Template
 
-This project is an Angular template project that implement the Onion Architecture.
+This project is an Angular template project that implements the Onion Architecture.
+
+**Any `npm` and `ng` command needs to be run in `app` directory.**
+
+## Install dependencies
+
+Run `npm install` to download and install external dependencies.
+
+## Link the modules
+
+Run `npm run link` to link the npm modules `domain`, `view`, `client` and `state` between them.
+
+The command simply runs `npm install` in each folder.
 
 ## Development server
 
@@ -12,16 +24,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `app/dist/` directory.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Since this project is a template, not default test framework has been inscluded.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular Onion Architecture, go check out the [related article on Medium](TBD)
