@@ -1,0 +1,10 @@
+{
+  "name": "state",
+  "dependencies": {
+    "domain": "file:../domain",
+    "@angular/core": "file:../app/node_modules/@angular/core",
+    "rxjs": "file:../app/node_modules/rxjs"
+  },
+  "private": true,
+  "type": "module"
+}

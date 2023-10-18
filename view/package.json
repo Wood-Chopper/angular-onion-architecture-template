@@ -1,0 +1,15 @@
+{
+  "name": "view",
+  "dependencies": {
+    "domain": "file:../domain",
+    "rxjs":  "file:../app/node_modules/rxjs",
+    "tslib": "file:../app/node_modules/tslib",
+    "@angular/core": "file:../app/node_modules/@angular/core",
+    "@angular/router": "file:../app/node_modules/@angular/router",
+    "@angular/common": "file:../app/node_modules/@angular/common",
+    "@angular/forms": "file:../app/node_modules/@angular/forms",
+    "@angular/platform-browser": "file:../app/node_modules/@angular/platform-browser"
+  },
+  "private": true,
+  "type": "module"
+}

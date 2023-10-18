@@ -1,0 +1,10 @@
+{
+  "name": "domain",
+  "dependencies": {
+    "rxjs": "file:../app/node_modules/rxjs",
+    "tslib": "file:../app/node_modules/tslib",
+    "@angular/core": "file:../app/node_modules/@angular/core"
+  },
+  "private": true,
+  "type": "module"
+}

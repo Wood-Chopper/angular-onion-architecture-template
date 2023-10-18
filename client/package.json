@@ -1,0 +1,12 @@
+{
+  "name": "client",
+  "dependencies": {
+    "domain": "file:../domain",
+    "@angular/core": "file:../app/node_modules/@angular/core",
+    "@angular/common": "file:../app/node_modules/@angular/common",
+    "rxjs": "file:../app/node_modules/rxjs",
+    "@woodchopper/property-mapper": "file:../app/node_modules/@woodchopper/property-mapper"
+  },
+  "private": true,
+  "type": "module"
+}
