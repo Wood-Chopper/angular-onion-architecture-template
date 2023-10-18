@@ -2,16 +2,19 @@ import { HelloWorldClientGateway } from '../gateway';
 import { HelloWorldStoreGateway } from '../gateway/hello-world.store.gateway';
 import { filter, map } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelloWorldFacade {
 
-  currentMassage$ = this.storeGateway.message$.pipe(
-    map(m => m||''),
+  private currentMessage$ = this.storeGateway.message$.pipe(
+    map(m => m??''),
     map(m => m.toUpperCase())
   );
+
+  currentMessage = toSignal<string>(this.currentMessage$);
 
   constructor(private clientGateway: HelloWorldClientGateway,
               private storeGateway: HelloWorldStoreGateway) {

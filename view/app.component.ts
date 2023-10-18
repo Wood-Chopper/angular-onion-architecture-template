@@ -9,7 +9,7 @@ export class AppComponent {
 
   input: string = '';
 
-  message$ = this.helloWorldFacade.currentMassage$;
+  message = this.helloWorldFacade.currentMessage;
 
   constructor(private helloWorldFacade: HelloWorldFacade) {}
 
