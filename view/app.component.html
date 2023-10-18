@@ -1,3 +1,9 @@
-<p>Hello worlds!</p>
+Message: {{ message$ | async }}
+<br/>
+<br/>
+<label> New message:
+  <input [(ngModel)]="input" type="text"/>
+</label>
+<button (click)="updateMessage()">Submit message</button>
 
 <router-outlet></router-outlet>
