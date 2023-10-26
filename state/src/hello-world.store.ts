@@ -1,16 +1,18 @@
 import { HelloWorldStoreGateway } from 'domain/gateway/hello-world.store.gateway';
 import { Store } from '../store';
-import { HelloWorldState, initialState } from './hello-world.state';
+import { MessageState, initialState } from './hello-world.state';
 import { Observable } from 'rxjs';
+import { Message } from "domain/model/message.model";
 
 export class HelloWorldStore extends HelloWorldStoreGateway {
 
-  private store = new Store<HelloWorldState>(initialState)
+  private store = new Store<MessageState>(initialState)
 
-  public message$: Observable<string | null> = this.store.select((state) => state.message);
+  public message$: Observable<Message>
+    = this.store.select((state) => ({info: state.currentMessage}));
 
-  public updateMessage(message: string): void {
-    this.store.update((state) => ({ ...state, message: message }))
+  public updateMessage(message: Message): void {
+    this.store.update((state) => ({ ...state, currentMessage: message.info }))
   }
 
 }

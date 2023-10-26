@@ -1,7 +1,7 @@
-export interface HelloWorldState {
-  message: string | null
+export interface MessageState {
+  currentMessage: string
 }
 
-export const initialState: HelloWorldState = {
-  message: 'Hello World!'
+export const initialState: MessageState = {
+  currentMessage: 'Hello World!'
 }

@@ -1,17 +1,22 @@
 import { Observable, of } from 'rxjs';
 import { HelloWorldClientGateway } from 'domain/gateway';
+import { MessageDto } from "./message.dto";
+import { Message } from "domain/model/message.model";
 
-const KEY: string = 'message';
+const KEY: string = 'storage_key';
 
 export class HelloWorldClient extends HelloWorldClientGateway {
 
-  getMessage(): Observable<string |null> {
-    let message: string | null = localStorage.getItem(KEY);
-    return of(message);
+  getMessage(): Observable<Message |null> {
+    const messageDtoString: string | null = localStorage.getItem(KEY);
+    const messageDto: MessageDto = messageDtoString ? JSON.parse(messageDtoString) : null;
+    const messageModel: Message = { info: messageDto.content }; // Mapping
+    return of(messageModel);
   }
 
-  public saveMessage(message: string): Observable<string> {
-    localStorage.setItem(KEY, message);
+  public saveMessage(message: Message): Observable<Message> {
+    const messageDto: MessageDto = { content: message.info }; // Mapping
+    localStorage.setItem(KEY, JSON.stringify(messageDto));
     return of(message);
   }
 }

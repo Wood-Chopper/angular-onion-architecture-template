@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
+import { Message } from "../model/message.model";
 
 export abstract class HelloWorldStoreGateway {
-  abstract updateMessage(message: string): void;
-
-  abstract message$: Observable<string | null>;
+  abstract message$: Observable<Message>;
+  abstract updateMessage(message: Message): void;
 }
