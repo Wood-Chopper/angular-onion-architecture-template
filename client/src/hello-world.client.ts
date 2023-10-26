@@ -7,9 +7,9 @@ const KEY: string = 'storage_key';
 
 export class HelloWorldClient extends HelloWorldClientGateway {
 
-  getMessage(): Observable<Message |null> {
-    const messageDtoString: string | null = localStorage.getItem(KEY);
-    const messageDto: MessageDto = messageDtoString ? JSON.parse(messageDtoString) : null;
+  getMessage(): Observable<Message> {
+    const storedString: string | null = localStorage.getItem(KEY);
+    const messageDto: MessageDto = storedString ? JSON.parse(storedString) : { content: null };
     const messageModel: Message = { info: messageDto.content }; // Mapping
     return of(messageModel);
   }
