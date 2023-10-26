@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { Message } from "domain/model/message.model";
 
 export class HelloWorldStore extends HelloWorldStoreGateway {
-
   private store = new Store<MessageState>(initialState)
 
   public message$: Observable<Message>
@@ -14,5 +13,4 @@ export class HelloWorldStore extends HelloWorldStoreGateway {
   public updateMessage(message: Message): void {
     this.store.update((state) => ({ ...state, currentMessage: message.info }))
   }
-
 }
